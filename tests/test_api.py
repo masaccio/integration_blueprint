@@ -1,5 +1,6 @@
 """Tests for integration_blueprint api."""
 import asyncio
+import pytest
 
 import aiohttp
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
@@ -7,6 +8,7 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from custom_components.integration_blueprint.api import IntegrationBlueprintApiClient
 
 
+@pytest.mark.asyncio
 async def test_api(hass, aioclient_mock, caplog):
     """Test API calls."""
 

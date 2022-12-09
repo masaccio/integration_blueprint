@@ -1,5 +1,6 @@
 """Test integration_blueprint switch."""
 from unittest.mock import call, patch
+import pytest
 
 from homeassistant.components.switch import SERVICE_TURN_OFF, SERVICE_TURN_ON
 from homeassistant.const import ATTR_ENTITY_ID
@@ -11,6 +12,7 @@ from custom_components.integration_blueprint.const import DEFAULT_NAME, DOMAIN, 
 from .const import MOCK_CONFIG
 
 
+@pytest.mark.asyncio
 async def test_switch_services(hass):
     """Test switch services."""
     # Create a mock entry so we don't have to go through config flow
